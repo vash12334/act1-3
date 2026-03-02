@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;  
+            font-family: 'Courier New', 'Inter', 'Segoe UI', monospace, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+
+       
+        .gallery-card {
+            max-width: 1000px;
+            width: 100%;
+            background: #ffffff;
+            border: 5px solid #000000;
+            border-radius: 2rem;
+            padding: 2.5rem 2.5rem 2.8rem 2.5rem;
+            box-shadow: none;
+            line-height: 1.5;
+        }
+
+       
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 4px solid #000000;
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .gallery-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .back-link {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #000000;
+            text-decoration: none;
+            border: 3px solid #000000;
+            padding: 0.6rem 2rem;
+            border-radius: 60px;
+            background: #ffffff;
+            transition: none;
+        }
+
+        .back-link:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0 2.5rem 0;
+        }
+
+      
+        .photo-item {
+            border: 4px solid #000000;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: #ffffff;
+            transition: transform 0.1s ease;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.02);
+        }
+
+      
+        .photo-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid #000000;
+        }
+
+        .photo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        
+        }
+
+      
+        .photo-caption {
+            padding: 0.8rem 1rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #000000;
+            text-align: center;
+            background: #ffffff;
+            border-top: 2px solid #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+      
+        .photo-image .fallback-text {
+            font-size: 2rem;
+            color: #000000;
+            font-weight: bold;
+        }
+
+    
+        .gallery-footer {
+            margin-top: 2rem;
+            border-top: 3px dashed #000000;
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #000000;
+            text-decoration: none;
+            border: 3px solid #000000;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            background: #ffffff;
+        }
+
+        .nav-button:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        
+        *:not(img) {
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+
+      
+        @media (max-width: 800px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            .gallery-title { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 500px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-card { padding: 1.5rem; }
+            .gallery-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-card">
+      
+        <div class="gallery-header">
+            <div class="gallery-title"> GALLERY</div>
+            <a href="index.html" class="back-link">[ BACK ]</a>
+        </div>
+
+     
+        <div class="gallery-grid">
+          
+            <div class="photo-item">
+                <div class="photo-image">
+                    
+                    <img src="01.jpg" 
+                         alt="Gallery image 1"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2230%22%20fill%3D%22%23000000%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%3EIMG%201%3C%2Ftext%3E%3C%2Fsvg%3E';">
+                </div>
+                <div class="photo-caption">AKO</div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-image">
+                 
+                    <img src="02.jpg" 
+                         alt="Gallery image 2"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2230\ %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %';">
+                </div>
+                <div class="photo-caption">AKO ITO</div>
+            </div>
+
+      
+            <div class="photo-item">
+                <div class="photo-image">
+                  
+                    <img src="3.jpg"
+                         alt="Gallery image 3"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2230%22%20fill%3D%22%23000000%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%3EIMG%203%3C%2Ftext%3E%3C%2Fsvg%3E';">
+                </div>
+                <div class="photo-caption">AKO ULET</div>
+            </div>
+
+       
+            <div class="photo-item">
+                <div class="photo-image">
+              
+                    <img src="4.jpg" 
+                         alt="Gallery image 4"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2230%22%20fill%3D%22%23000000%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%3EIMG%204%3C%2Ftext%3E%3C%2Fsvg%3E';">
+                </div>
+                <div class="photo-caption">AKO NANAMAN</div>
+            </div>
+
+   
+            <div class="photo-item">
+                <div class="photo-image">
+              
+                    <img src="5.jpg" 
+                         alt="Gallery image 5"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2230%22%20fill%3D%22%23000000%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%3EIMG%205%3C%2Ftext%3E%3C%2Fsvg%3E';">
+                </div>
+                <div class="photo-caption">AKO PARIN TO</div>
+            </div>
+
+    <div class="photo-item">
+                <div class="photo-image">
+               
+                    <img src="6.jpg" 
+                         alt="Gallery image 6"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22400%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-size%3D%2230%22%20fill%3D%22%23000000%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%3EIMG%206%3C%2Ftext%3E%3C%2Fsvg%3E';">
+                </div>
+                <div class="photo-caption">AKO LANG</div>
+            </div>
+        </div>
+
+   
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile · Vincent Razzlyn A. Alonzo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000; 
+            font-family: 'Courier New', 'Inter', 'Segoe UI', monospace, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .profile-card {
+            max-width: 800px;
+            width: 100%;
+            background: #ffffff;
+            border: 5px solid #000000;
+            border-radius: 2rem;
+            padding: 2.5rem 3rem 2.8rem 3rem;
+            box-shadow: none;
+            line-height: 1.5;
+        }
+
+    
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        
+        .picture-1x1 {
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+            border: 4px solid #000000;
+            border-radius: 50%;  
+            overflow: hidden;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .picture-1x1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;    
+            display: block;
+       
+        }
+
+        .name-title {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 0.5rem;
+        }
+
+  
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #000000;
+            margin: 0.8rem 0 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.8rem;
+        }
+
+        .tagline span {
+            background: #000000;
+            color: #ffffff;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+   
+        .separator {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #000000;
+            text-align: center;
+            margin: 1rem 0 1.2rem 0;
+            letter-spacing: 2px;
+            border-bottom: 2px dashed #000000;
+            padding-bottom: 0.3rem;
+        }
+
+   
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #000000;
+            margin: 2rem 0 0.8rem 0;
+            text-transform: uppercase;
+            border-left: 8px solid #000000;
+            padding-left: 1.2rem;
+        }
+
+
+        .about-text {
+            font-size: 1.7rem;
+            color: #000000;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+            font-weight: 450;
+        }
+
+        .about-text strong {
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+        }
+
+ 
+        .list {
+            font-size: 1.8rem;
+            color: #000000;
+            list-style-type: none;
+            margin-left: 1rem;
+        }
+
+        .list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .list li::before {
+            content: "▶";
+            font-size: 1.6rem;
+            color: #000000;
+            font-weight: bold;
+        }
+
+
+        .contact-block {
+            background: #ffffff;
+            border: 3px solid #000000;
+            border-radius: 50px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 1.8rem 0;
+            font-size: 1.8rem;
+            color: #000000;
+            line-height: 2.2;
+        }
+
+        .contact-block a {
+            color: #000000;
+            text-decoration: none;
+            border-bottom: 2px solid #000000;
+            font-weight: 600;
+        }
+
+        .contact-block a:hover {
+            background: #000000;
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+
+       .back-link {
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000000;
+            text-decoration: none;
+            border: 4px solid #000000;
+            padding: 0.8rem 2.8rem;
+            border-radius: 60px;
+            background: #ffffff;
+            margin-top: 1.5rem;
+            transition: none;
+            text-transform: uppercase;
+        }
+
+        .back-link:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+ 
+        .emoji {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+      
+        * {
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+
+        
+
+        @media (max-width: 700px) {
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+            .name-title { width: 100%; }
+            .name { font-size: 2.4rem; }
+        }
+
+        @media (max-width: 600px) {
+            .profile-card { padding: 1.8rem; }
+            .tagline span { font-size: 1.4rem; }
+            .section-title { font-size: 1.9rem; }
+            .about-text { font-size: 1.5rem; }
+            .list { font-size: 1.5rem; }
+            .contact-block { font-size: 1.5rem; }
+            .back-link { font-size: 1.6rem; padding: 0.6rem 2rem; }
+            .picture-1x1 { width: 100px; height: 100px; min-width: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+      
+     
+        <div class="profile-header">
+         
+            <div class="picture-1x1">
+                
+                <img src="profile.PNG" 
+                     alt="1x1 profile"
+                     onerror="this.src='https://via.placeholder.com/200x200/000000/ffffff?text=VINCENT'">
+               
+            </div>
+            <div class="name-title">
+                <div class="name">Vincent Razzlyn A. Alonzo</div>
+                
+                <div class="tagline" style="margin-top: 0.5rem;">
+                    <span>Student</span>
+                    <span>Gamer</span>
+                </div>
+            </div>
+        </div>
+
+      
+        <div class="separator">———</div>
+
+
+        <div class="section-title">About Me</div>
+        <div class="about-text">
+            Hi I’m <strong>Vincent</strong>. As a dedicated gamer, gaming is a passionate, immersive lifestyle rather than just a hobby,
+             serving as a creative outlet, a way to build skills like strategy and teamwork, and a means of connecting with friends. 
+             It provides a challenging, rewarding escape, fostering a sense of accomplishment, whether through competitive multiplayer
+              or deep, immersive storytelling. 
+        </div>
+
+      
+        <div class="section-title">Skills</div>
+        <ul class="list">
+            <li>Problem Solving</li>
+            <li>Communication</li>
+        </ul>
+
+        
+        <div class="section-title">Hobbies</div>
+        <ul class="list">
+            <li><span class="emoji">🎮</span> Gaming</li>
+            <li><span class="emoji">🎵</span> Listening to music</li>
+        </ul>
+
+
+        <div class="section-title">Contact</div>
+        <div class="contact-block">
+            Email: <a href="mailto:alonzovincent480@gmail.com">alonzovincent480@gmail.com</a><br>
+            Facebook: <a href="#" target="_blank">facebook.com/VincentAlonzo</a>
+        </div>
+
+       
+        <a href="index.html" class="back-link">[ Back ]</a>
+
+    </div>
+</body>
+</html>

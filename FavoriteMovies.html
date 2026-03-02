@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Movies</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .movies-card {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2rem;
+            border: 4px solid #000000;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 8px 8px 0 #000000;
+        }
+
+        .panel-header {
+            margin-bottom: 2rem;
+            border-bottom: 4px solid #000000;
+            padding-bottom: 1rem;
+        }
+
+        .panel-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #000000;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: none;
+        }
+
+     
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem 1.2rem;
+            margin: 2.2rem 0 2.5rem 0;
+        }
+
+        .movie-item {
+            background: #ffffff;
+            border: 3px solid #000000;
+            border-radius: 0;               
+            padding: 1.2rem 0.8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: none;
+            box-shadow: 5px 5px 0 #000000;
+        }
+
+        .movie-item:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 #000000;
+            background: #f0f0f0;            
+        }
+
+   
+        .movie-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.3;
+            margin: 0.3rem 0;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.3rem;
+            width: 100%;
+        }
+
+        .movie-sub {
+            font-size: 1.4rem;
+            color: #333333;
+            font-style: italic;
+            border-top: 1px solid #000;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+
+   
+        .action-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.8rem;
+            border-top: 3px solid #000000;
+            padding-top: 2rem;
+        }
+
+        .back-btn {
+            background: #ffffff;
+            border: 3px solid #000000;
+            color: #000000;
+            font-size: 2rem;
+            font-weight: 700;
+            padding: 0.8rem 3rem 0.8rem 2.5rem;
+            border-radius: 0;              
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 5px 5px 0 #000000;
+            transition: none;
+            font-family: inherit;
+        }
+
+        .back-btn:hover {
+            background: #000000;
+            color: #ffffff;
+            border-color: #000000;
+            box-shadow: 3px 3px 0 #333333;
+            transform: translate(2px, 2px);
+        }
+
+        .back-arrow {
+            font-size: 2.4rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .film-note, .film-icon, .movie-poster-placeholder {
+            display: none;
+        }
+
+   
+        .movie-item, .back-btn, .movies-card, .panel-header h1 {
+            text-shadow: none;
+            filter: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="movies-card">
+    
+        <div class="panel-header">
+            <h1>FAVORITE MOVIES</h1>
+        </div>
+
+    
+        <div class="movie-grid">
+            <div class="movie-item">
+                <div class="movie-title">THE TEN COMMANDMENTS</div>
+                <div class="movie-sub">1956 · EPIC</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">SUPERBOOK</div>
+                <div class="movie-sub">ANIME / CLASSIC</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">PASSION OF THE CHRIST</div>
+                <div class="movie-sub">2004 · DRAMA</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">NOAH</div>
+                <div class="movie-sub">2014 · ARK</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">THE PRINCE OF EGYPT</div>
+                <div class="movie-sub">1998 · ANIMATED</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">BEN-HUR</div>
+                <div class="movie-sub">1959 · CHARIOT</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">THE GOSPEL OF JOHN</div>
+                <div class="movie-sub">2003 · WORD</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">RISEN</div>
+                <div class="movie-sub">2016 · MYSTERY</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">THE NATIVITY STORY</div>
+                <div class="movie-sub">2006 · BIRTH</div>
+            </div>
+            <div class="movie-item">
+                <div class="movie-title">JOSEPH: KING OF DREAMS</div>
+                <div class="movie-sub">2000 · DREAMER</div>
+            </div>
+        </div>
+
+
+        <div class="action-row">
+            <button class="back-btn" id="backToHomeBtn">
+                <span class="back-arrow">←</span> BACK TO HOME
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        (function() {
+            const backBtn = document.getElementById('backToHomeBtn');
+            if (backBtn) {
+                backBtn.addEventListener('click', function() {
+                    window.location.href = 'index.html'; 
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

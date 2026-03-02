@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home · favorites panel</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+
+        .home-card {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2rem;
+            border: 4px solid #000000;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 0 0 2px #000;
+        }
+
+    
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 2rem;
+            border-bottom: 4px solid #000;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+
+        .favorites-panel {
+            border: 4px solid #000000;
+            border-radius: 40px;
+            padding: 2.2rem 2.5rem;
+            background: #ffffff;
+            margin: 1rem 0 2rem 0;
+        }
+
+   
+        .panel-title {
+            font-size: 2.8rem;
+            font-weight: 650;
+            color: #000;
+            margin-bottom: 2rem;
+            border-left: 6px solid #000;
+            padding-left: 1.5rem;
+            text-transform: uppercase;
+        }
+
+     
+        .fav-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0 2.5rem 0;
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #000;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            cursor: default;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 2.2rem;
+            height: 2.2rem;
+            border: 3px solid #000;
+            background: #fff;
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .check-item input[type="checkbox"]:checked {
+            background: #fff;
+            border: 3px solid #000;
+        }
+
+        .check-item input[type="checkbox"]:checked::before {
+            content: "✕";
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000;
+            display: block;
+            text-align: center;
+            line-height: 1.6rem;
+        }
+
+        .check-item input[type="checkbox"]::before {
+            display: none;
+        }
+
+        .check-item input[type="checkbox"]:focus {
+            outline: 3px solid #000;
+            outline-offset: 2px;
+        }
+
+     
+        .action-row {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            font-size: 2.2rem;
+            font-weight: 600;
+            padding: 0.7rem 2.8rem;
+            background: #ffffff;
+            border: 3px solid #000000;
+            border-radius: 50px;
+            color: #000000;
+            cursor: pointer;
+            font-family: inherit;
+            min-width: 130px;
+            text-align: center;
+            transition: none;
+        }
+
+        .action-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .action-btn:active {
+            transform: scale(0.97);
+        }
+
+        .bottom-hint {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 3px solid #000;
+            padding-top: 1rem;
+            font-weight: 500;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .home-card, .favorites-panel, .action-btn, .check-item {
+            box-shadow: none;
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-card">
+        <div class="page-title">HOME PAGE</div>
+
+        <div class="favorites-panel">
+            <div class="panel-title">My Favorites</div>
+
+    
+            <div class="fav-checklist">
+                <label class="check-item">
+                    <input type="checkbox" id="chkImage"> Image
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" id="chkSong"> Song
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" id="chkMovie" checked> Movie
+                </label>
+            </div>
+
+        
+            <div class="action-row">
+                <button class="action-btn" id="okBtn">OK</button>
+                <button class="action-btn" id="backBtn">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const ok = document.getElementById('okBtn');
+            const back = document.getElementById('backBtn');
+            const imageChk = document.getElementById('chkImage');
+            const songChk = document.getElementById('chkSong');
+            const movieChk = document.getElementById('chkMovie');
+
+            if (ok) {
+                ok.addEventListener('click', function() {
+        
+                    if (imageChk && imageChk.checked) {
+                        window.location.href = "FavoriteImage.html";
+                    } else if (songChk && songChk.checked) {
+                        window.location.href = "Favorite.html";
+                    } else if (movieChk && movieChk.checked) {
+                        window.location.href = "FavoriteMovies.html";
+                    } else {
+                        alert('Please select a favorite (Image, Song, or Movie)');
+                    }
+                });
+            }
+
+        
+            if (back) {
+                back.addEventListener('click', function() {
+                    window.location.href = "index.html"; 
+                    
+        
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

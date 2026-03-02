@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>HOME PAGE</title>
+</head>
+
+<body bgcolor="#FFFF00">
+    <!-- functional back button at the top right -->
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <!-- empty div for spacing (optional) -->
+        <div></div>
+        <!-- back button -->
+        <button onclick="goBack()" style="
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 3px solid #000000;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'Trebucket MS', sans-serif;
+        ">BACK</button>
+    </div>
+
+    <h1>
+        <font color="#008000" size="6" face="Comic Sans MS">
+            <u>Hello</u>
+        </font>
+        <font color="#FF0000" size="7" face="Trebucket MS">
+            <b><i>world</i></b>
+        </font>
+    </h1>
+
+    <p>
+        <font color="#0000FF" size="4" face="Courier New">
+            <strike><strike>This is</strike></strike>
+            <sup>Vincent</sup>
+            <sub>Page</sub>
+        </font>
+    </p>
+
+    <!-- simple JavaScript function for back navigation -->
+    <script>
+        function goBack() {
+            // Navigate to home page (index.html) - you can change the filename if needed
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
